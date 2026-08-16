@@ -1,64 +1,21 @@
 ```
 # Dependencies
 node_modules/
-backend/node_modules/
-frontend/node_modules/
 
-# Environment variables
+# Environment
 .env
 .env.local
 *.env.*
 
-# Build outputs
-backend/dist/
-backend/build/
-frontend/dist/
-frontend/build/
-
-# TypeScript/JavaScript cache
-*.tsbuildinfo
-.next/
-.nuxt/
-
-# Python related (if any Python in project)
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
-env/
-venv/
-.venv/
-
 # Logs
 *.log
 
-# OS generated files
-.DS_Store
-Thumbs.db
-
-# IDE specific
+# IDE
 .vscode/
 .idea/
-*.swp
-*.swo
 
-# Coverage reports
-coverage/
-htmlcov/
-.coverage
-
-# Temporary files
-*.tmp
-*.temp
-
-# Database
-*.db
-*.sqlite
-*.sqlite3
-
-# Package manager
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
+# Build artifacts
+dist/
+build/
+target/
 ```
