@@ -1,4 +1,11 @@
 import { getSupabaseClient } from '../config/database.js'
+import dotenv from 'dotenv'
+import path from 'path'
+import { fileURLToPath } from 'url'
+
+// Load environment variables from project root
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+dotenv.config({ path: path.resolve(__dirname, '../../.env') })
 
 export interface Complaint {
   id: string

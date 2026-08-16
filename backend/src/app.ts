@@ -2,9 +2,13 @@ import express, { Application, Request, Response } from 'express'
 import cors from 'cors'
 import helmet from 'helmet'
 import dotenv from 'dotenv'
+import path from 'path'
+import { fileURLToPath } from 'url'
 import routes from './routes/index.js'
 
-dotenv.config()
+// Load environment variables from project root
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+dotenv.config({ path: path.resolve(__dirname, '../.env') })
 
 const app: Application = express()
 const PORT = process.env.PORT || 5000
