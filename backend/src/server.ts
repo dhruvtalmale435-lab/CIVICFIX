@@ -1,4 +1,11 @@
+import dotenv from 'dotenv'
+import path from 'path'
+import { fileURLToPath } from 'url'
 import { app, PORT } from './app.js'
+
+// Load environment variables from project root
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+dotenv.config({ path: path.resolve(__dirname, '../.env') })
 
 const server = app.listen(PORT, () => {
   console.log(`CivicFix API running on http://localhost:${PORT}`)
