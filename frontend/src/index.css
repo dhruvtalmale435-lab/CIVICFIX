@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Manrope', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --color-navy: #1a3353;
+  --color-navy-dark: #0f2240;
+  --color-navy-light: #2a4a70;
+  --color-navy-muted: #3b5a80;
+
+  --color-civic-green: #15803d;
+  --color-civic-green-light: #dcfce7;
+  --color-civic-amber: #b45309;
+  --color-civic-amber-light: #fef3c7;
+  --color-civic-red: #b91c1c;
+  --color-civic-red-light: #fee2e2;
+  --color-civic-blue: #1d4ed8;
+  --color-civic-blue-light: #dbeafe;
+
+  --color-surface: #f8f9fb;
+  --color-card: #ffffff;
+  --color-border: #e4e8ef;
+  --color-border-strong: #c8d0dc;
+
+  --color-text-primary: #0f1923;
+  --color-text-secondary: #4a5568;
+  --color-text-muted: #7a8697;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8f9fb;
+  color: #0f1923;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Manrope', sans-serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #c8d0dc;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a0aab8;
+}
+
+/* Custom utilities */
+.font-display {
+  font-family: 'Manrope', sans-serif;
+}
+
+.nav-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4a5568;
+  transition: color 0.15s;
+}
+.nav-link:hover {
+  color: #1a3353;
+}
+.nav-link.active {
+  color: #1a3353;
+  font-weight: 600;
+}
+
+/* Progress bar */
+.progress-step {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.progress-step.done { color: #15803d; }
+.progress-step.active { color: #1a3353; }
+.progress-step.pending { color: #7a8697; }
+
+/* Map styles */
+.map-container {
+  background: #e8edf5;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4a5568;
+  transition: all 0.15s;
+  cursor: pointer;
+}
+.sidebar-link:hover {
+  background: #f0f4f8;
+  color: #1a3353;
+}
+.sidebar-link.active {
+  background: #1a3353;
+  color: white;
+}
+
+/* Transitions */
+.transition-base {
+  transition: all 0.15s ease;
+}
+
+/* Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* Priority colors */
+.priority-urgent { background: #fee2e2; color: #b91c1c; }
+.priority-high { background: #fef3c7; color: #b45309; }
+.priority-medium { background: #fef9c3; color: #854d0e; }
+.priority-low { background: #dcfce7; color: #15803d; }
+
+/* Status colors */
+.status-reported { background: #f1f5f9; color: #475569; }
+.status-verified { background: #dbeafe; color: #1d4ed8; }
+.status-assigned { background: #ede9fe; color: #6d28d9; }
+.status-inprogress { background: #fef3c7; color: #b45309; }
+.status-resolved { background: #dcfce7; color: #15803d; }
+
+/* Chart labels */
+.chart-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  fill: #7a8697;
+}
+
+/* Input focus */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #1a3353 !important;
+  box-shadow: 0 0 0 3px rgba(26,51,83,0.1);
+}
+
+/* Card hover */
+.card-hover {
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+.card-hover:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transform: translateY(-1px);
+}
+
+/* Drag zone */
+.drag-zone {
+  border: 2px dashed #c8d0dc;
+  border-radius: 12px;
+  transition: border-color 0.15s, background 0.15s;
+}
+.drag-zone:hover {
+  border-color: #1a3353;
+  background: #f0f4f8;
+}
+
+/* Animate spin */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Hide scrollbar until hover on containers */
+.overflow-y-auto {
+  scrollbar-width: thin;
+  scrollbar-color: #c8d0dc transparent;
+}
+.overflow-x-auto {
+  scrollbar-width: thin;
+  scrollbar-color: #c8d0dc transparent;
+}

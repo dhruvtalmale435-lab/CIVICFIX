@@ -1,0 +1,10 @@
+{
+  "description": "Connect citizens with local authorities to report and resolve urban issues efficiently, enhancing city maintenance and community engagement.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
