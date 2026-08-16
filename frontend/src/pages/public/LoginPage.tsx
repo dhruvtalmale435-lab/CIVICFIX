@@ -58,16 +58,19 @@ export function LoginPage() {
     setMemberName(''); setMemberPhone('')
   }
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     if (!selectedRole) return
     if (email !== selectedRole.demo.email || password !== selectedRole.demo.password) {
       setError('Invalid credentials. Use the demo credentials shown.'); return
     }
     setLoading(true)
-    setTimeout(() => {
-      login({ role: selectedRole.role, name: selectedRole.demo.name, id: selectedRole.demo.id, teamMembers })
+    const result = await signInWithDemo(selectedRole.role)
+    setLoading(false)
+    if (result.success) {
       navigate('/')
-    }, 800)
+    } else {
+      setError(result.error || 'Login failed')
+    }
   }
 
   return (
